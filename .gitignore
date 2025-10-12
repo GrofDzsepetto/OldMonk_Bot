@@ -1,2 +1,6 @@
 # helyi titkos adatok
 secrets.json
+secret.json
+tokens.json
+models/
+release/

@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Bence\\source\\repos\\Kuvasz_TwitchBot\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{70A8EF5B-5644-426B-B0EE-36EA87C93AB2}|Kuvasz_TwitchBot\\Kuvasz_TwitchBot.csproj|c:\\users\\bence\\source\\repos\\kuvasz_twitchbot\\kuvasz_twitchbot\\twitchfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70A8EF5B-5644-426B-B0EE-36EA87C93AB2}|Kuvasz_TwitchBot\\Kuvasz_TwitchBot.csproj|solutionrelative:kuvasz_twitchbot\\twitchfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70A8EF5B-5644-426B-B0EE-36EA87C93AB2}|Kuvasz_TwitchBot\\Kuvasz_TwitchBot.csproj|c:\\users\\bence\\source\\repos\\kuvasz_twitchbot\\kuvasz_twitchbot\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70A8EF5B-5644-426B-B0EE-36EA87C93AB2}|Kuvasz_TwitchBot\\Kuvasz_TwitchBot.csproj|solutionrelative:kuvasz_twitchbot\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TwitchFunctions.cs",
+              "DocumentMoniker": "C:\\Users\\Bence\\source\\repos\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot\\TwitchFunctions.cs",
+              "RelativeDocumentMoniker": "Kuvasz_TwitchBot\\TwitchFunctions.cs",
+              "ToolTip": "C:\\Users\\Bence\\source\\repos\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot\\TwitchFunctions.cs",
+              "RelativeToolTip": "Kuvasz_TwitchBot\\TwitchFunctions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-11T18:16:17.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Bence\\source\\repos\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot\\Program.cs",
+              "RelativeDocumentMoniker": "Kuvasz_TwitchBot\\Program.cs",
+              "ToolTip": "C:\\Users\\Bence\\source\\repos\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot\\Program.cs",
+              "RelativeToolTip": "Kuvasz_TwitchBot\\Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABkAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T21:14:22.684Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
