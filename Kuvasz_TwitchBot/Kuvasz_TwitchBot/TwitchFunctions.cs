@@ -34,7 +34,7 @@ namespace Kuvasz_TwitchBot
             return code ?? throw new Exception("Auth code nem érkezett meg.");
         }
         public record TwitchTokenResponse(string access_token, string refresh_token, int expires_in, string token_type, string[] scope);
-        public static async Task<string> GetAccessToken(string clientId, string clientSecret, string code)
+        public static async Task<string> GetAccessToken(string clientId, string clientSecret, string code, out string refreshToken)
         {
             var redirect = "http://localhost:3000/oldmonk/";
             using var client = new HttpClient();
@@ -55,8 +55,10 @@ namespace Kuvasz_TwitchBot
             if (token is null || string.IsNullOrWhiteSpace(token.access_token))
                 throw new Exception("Nem sikerült kinyerni az access_token-t a válaszból.");
 
+            refreshToken = token.refresh_token;
             return token.access_token;
         }
+
         public static async Task SendMessageToTwitch(string oauthToken, string botUsername, string channel, string message)
         {
             using var client = new TcpClient("irc.chat.twitch.tv", 6667);
@@ -68,6 +70,50 @@ namespace Kuvasz_TwitchBot
             await writer.WriteLineAsync($"JOIN #{channel}");
             await writer.WriteLineAsync($"PRIVMSG #{channel} :{message}");
         }
+        public record TwitchTokens(string AccessToken, string RefreshToken, DateTime ExpiresAt);
+
+        public static void SaveTokens(TwitchTokens tokens, string path)
+        {
+            var json = System.Text.Json.JsonSerializer.Serialize(tokens);
+            File.WriteAllText(path, json);
+        }
+
+        public static TwitchTokens? LoadTokens(string path)
+        {
+            if (!File.Exists(path)) return null;
+            var json = File.ReadAllText(path);
+            return System.Text.Json.JsonSerializer.Deserialize<TwitchTokens>(json);
+        }
+        public static bool IsTokenValid(TwitchTokens tokens)
+        {
+            return tokens.ExpiresAt > DateTime.UtcNow;
+        }
+        public static async Task<TwitchTokens> RefreshAccessToken(string clientId, string clientSecret, string refreshToken)
+        {
+            using var client = new HttpClient();
+            var data = new Dictionary<string, string>
+            {
+                ["grant_type"] = "refresh_token",
+                ["refresh_token"] = refreshToken,
+                ["client_id"] = clientId,
+                ["client_secret"] = clientSecret
+            };
+
+            var response = await client.PostAsync("https://id.twitch.tv/oauth2/token", new FormUrlEncodedContent(data));
+            response.EnsureSuccessStatusCode();
+            var json = await response.Content.ReadAsStringAsync();
+            var token = System.Text.Json.JsonSerializer.Deserialize<TwitchTokenResponse>(json);
+
+            if (token is null || string.IsNullOrWhiteSpace(token.access_token))
+                throw new Exception("Nem sikerült frissíteni az access token-t.");
+
+            return new TwitchTokens(
+                token.access_token,
+                token.refresh_token,
+                DateTime.UtcNow.AddSeconds(token.expires_in)
+            );
+        }
+
     }
     public sealed class TwitchToken
     {

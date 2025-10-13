@@ -1,7 +1,8 @@
-﻿using System.Text;
-using System.Net.Security;
+﻿using System.Net.Security;
 using System.Net.Sockets;
+using System.Text;
 using System.Text.Json;
+using static Kuvasz_TwitchBot.TwitchFunctions;
 using static System.Formats.Asn1.AsnWriter;
 
 
@@ -15,15 +16,31 @@ namespace Kuvasz_TwitchBot
         {
             var cfg = LoadConfig();
 
-            var authCode = await TwitchFunctions.GetTwitchAuthCode(cfg.client_id, cfg.client_secret, cfg.scopes);
-            var oauthToken = await TwitchFunctions.GetAccessToken(cfg.client_id, cfg.client_secret, authCode);
-            Console.WriteLine("Kode-ok lekérve");
-            //await TwitchFunctions.SendMessageToTwitch(oauthToken, "oldmonk_bot", "geppo2tv", "testmessage");
+            string tokenFile = "tokens.json";
+            var tokens = LoadTokens(tokenFile);
+
+            if (tokens == null)
+            {
+                // AuthCode és AccessToken lekérése egyszer
+                var code = await TwitchFunctions.GetTwitchAuthCode(cfg.client_id, cfg.client_secret, cfg.scopes);
+                var accessToken = await TwitchFunctions.GetAccessToken(cfg.client_id, cfg.client_secret, code, out var refreshToken);
+
+                tokens = new TwitchTokens(accessToken, refreshToken, DateTime.UtcNow.AddHours(1));
+                SaveTokens(tokens, tokenFile);
+            }
+            else if (!IsTokenValid(tokens))
+            {
+                tokens = await RefreshAccessToken(cfg.client_id, cfg.client_secret, tokens.RefreshToken);
+                SaveTokens(tokens, tokenFile);
+            }
+
+            Console.WriteLine("Token készen áll.");
+            // await TwitchFunctions.SendMessageToTwitch(tokens.AccessToken, "oldmonk_bot", "geppo2tv", "testmessage");
 
 
 
-            // ==================================== VOICE CAPTURE  ====================================
-            await RecordVoiceAndSendMessage(oauthToken);
+        // ==================================== VOICE CAPTURE  ====================================
+        await RecordVoiceAndSendMessage(tokens.AccessToken);
             Console.ReadLine();
         }
 
@@ -57,7 +74,6 @@ namespace Kuvasz_TwitchBot
                         break;
                     }
                 }
-
                 var text = await vtt.TranscribeAsync(@"mic.wav");
                 Console.WriteLine("Felismert szöveg:");
                 Console.WriteLine(text);

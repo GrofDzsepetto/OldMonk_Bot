@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bence\\source\\repos\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot.csproj": {}
+    "D:\\GitHub\\OldMonk_Bot\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bence\\source\\repos\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot.csproj": {
+    "D:\\GitHub\\OldMonk_Bot\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bence\\source\\repos\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot.csproj",
+        "projectUniqueName": "D:\\GitHub\\OldMonk_Bot\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot.csproj",
         "projectName": "Kuvasz_TwitchBot",
-        "projectPath": "C:\\Users\\Bence\\source\\repos\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot.csproj",
-        "packagesPath": "C:\\Users\\Bence\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bence\\source\\repos\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot\\obj\\",
+        "projectPath": "D:\\GitHub\\OldMonk_Bot\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot.csproj",
+        "packagesPath": "C:\\Users\\uif79177\\.nuget\\packages\\",
+        "outputPath": "D:\\GitHub\\OldMonk_Bot\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Bence\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\uif79177\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -83,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
