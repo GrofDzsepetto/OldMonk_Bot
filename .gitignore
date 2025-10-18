@@ -4,3 +4,26 @@ secret.json
 tokens.json
 models/
 release/
+
+# IDE-specifikus
+.vs/
+.idea/
+*.swp
+*.sln.iml
+
+# Visual Studio / MSBuild cache
+*.FileListAbsolute.txt
+*.userprefs
+*.psess
+*.vsp
+*.vspx
+*.sap
+*.pdb
+
+# Logs és cache
+*.log
+*.tlog
+*.cache
+*.tmp
+*.bak
+*.dbmdl

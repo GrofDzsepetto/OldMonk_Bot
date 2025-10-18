@@ -1,14 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Bence\\source\\repos\\Kuvasz_TwitchBot\\",
+  "WorkspaceRootPath": "A:\\GitHub\\OldMonk_Bot\\Kuvasz_TwitchBot\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{70A8EF5B-5644-426B-B0EE-36EA87C93AB2}|Kuvasz_TwitchBot\\Kuvasz_TwitchBot.csproj|c:\\users\\bence\\source\\repos\\kuvasz_twitchbot\\kuvasz_twitchbot\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{70A8EF5B-5644-426B-B0EE-36EA87C93AB2}|Kuvasz_TwitchBot\\Kuvasz_TwitchBot.csproj|solutionrelative:kuvasz_twitchbot\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{70A8EF5B-5644-426B-B0EE-36EA87C93AB2}|Kuvasz_TwitchBot\\Kuvasz_TwitchBot.csproj|a:\\github\\oldmonk_bot\\kuvasz_twitchbot\\kuvasz_twitchbot\\voicetotext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70A8EF5B-5644-426B-B0EE-36EA87C93AB2}|Kuvasz_TwitchBot\\Kuvasz_TwitchBot.csproj|solutionrelative:kuvasz_twitchbot\\voicetotext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{70A8EF5B-5644-426B-B0EE-36EA87C93AB2}|Kuvasz_TwitchBot\\Kuvasz_TwitchBot.csproj|c:\\users\\bence\\source\\repos\\kuvasz_twitchbot\\kuvasz_twitchbot\\twitchfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{70A8EF5B-5644-426B-B0EE-36EA87C93AB2}|Kuvasz_TwitchBot\\Kuvasz_TwitchBot.csproj|a:\\github\\oldmonk_bot\\kuvasz_twitchbot\\kuvasz_twitchbot\\messagecleaner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70A8EF5B-5644-426B-B0EE-36EA87C93AB2}|Kuvasz_TwitchBot\\Kuvasz_TwitchBot.csproj|solutionrelative:kuvasz_twitchbot\\messagecleaner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70A8EF5B-5644-426B-B0EE-36EA87C93AB2}|Kuvasz_TwitchBot\\Kuvasz_TwitchBot.csproj|a:\\github\\oldmonk_bot\\kuvasz_twitchbot\\kuvasz_twitchbot\\twitchfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{70A8EF5B-5644-426B-B0EE-36EA87C93AB2}|Kuvasz_TwitchBot\\Kuvasz_TwitchBot.csproj|solutionrelative:kuvasz_twitchbot\\twitchfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70A8EF5B-5644-426B-B0EE-36EA87C93AB2}|Kuvasz_TwitchBot\\Kuvasz_TwitchBot.csproj|a:\\github\\oldmonk_bot\\kuvasz_twitchbot\\kuvasz_twitchbot\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70A8EF5B-5644-426B-B0EE-36EA87C93AB2}|Kuvasz_TwitchBot\\Kuvasz_TwitchBot.csproj|solutionrelative:kuvasz_twitchbot\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,25 +35,51 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "MessageCleaner.cs",
+              "DocumentMoniker": "A:\\GitHub\\OldMonk_Bot\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot\\MessageCleaner.cs",
+              "RelativeDocumentMoniker": "Kuvasz_TwitchBot\\MessageCleaner.cs",
+              "ToolTip": "A:\\GitHub\\OldMonk_Bot\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot\\MessageCleaner.cs",
+              "RelativeToolTip": "Kuvasz_TwitchBot\\MessageCleaner.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T22:25:10.78Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "VoiceToText.cs",
+              "DocumentMoniker": "A:\\GitHub\\OldMonk_Bot\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot\\VoiceToText.cs",
+              "RelativeDocumentMoniker": "Kuvasz_TwitchBot\\VoiceToText.cs",
+              "ToolTip": "A:\\GitHub\\OldMonk_Bot\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot\\VoiceToText.cs",
+              "RelativeToolTip": "Kuvasz_TwitchBot\\VoiceToText.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T21:41:36.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "TwitchFunctions.cs",
-              "DocumentMoniker": "C:\\Users\\Bence\\source\\repos\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot\\TwitchFunctions.cs",
+              "DocumentMoniker": "A:\\GitHub\\OldMonk_Bot\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot\\TwitchFunctions.cs",
               "RelativeDocumentMoniker": "Kuvasz_TwitchBot\\TwitchFunctions.cs",
-              "ToolTip": "C:\\Users\\Bence\\source\\repos\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot\\TwitchFunctions.cs",
+              "ToolTip": "A:\\GitHub\\OldMonk_Bot\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot\\TwitchFunctions.cs",
               "RelativeToolTip": "Kuvasz_TwitchBot\\TwitchFunctions.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACIAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-11T18:16:17.018Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Bence\\source\\repos\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot\\Program.cs",
+              "DocumentMoniker": "A:\\GitHub\\OldMonk_Bot\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot\\Program.cs",
               "RelativeDocumentMoniker": "Kuvasz_TwitchBot\\Program.cs",
-              "ToolTip": "C:\\Users\\Bence\\source\\repos\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot\\Program.cs",
+              "ToolTip": "A:\\GitHub\\OldMonk_Bot\\Kuvasz_TwitchBot\\Kuvasz_TwitchBot\\Program.cs",
               "RelativeToolTip": "Kuvasz_TwitchBot\\Program.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAA1wEMAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAADgAAAAAAAAAAAAwwEsAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-01T21:14:22.684Z",
               "EditorCaption": ""

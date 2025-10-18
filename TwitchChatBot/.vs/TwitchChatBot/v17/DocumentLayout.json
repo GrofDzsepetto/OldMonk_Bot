@@ -48,7 +48,7 @@
               "RelativeDocumentMoniker": "TwitchChatBot\\ConnectionDatas.cs",
               "ToolTip": "A:\\GitHub\\OldMonk_Bot\\TwitchChatBot\\TwitchChatBot\\ConnectionDatas.cs",
               "RelativeToolTip": "TwitchChatBot\\ConnectionDatas.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAYwGEAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAADEAAAAAAAAAAAAYwDwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-27T12:07:06.816Z",
               "EditorCaption": ""
@@ -63,8 +63,7 @@
               "RelativeToolTip": "TwitchChatBot\\TTSContainer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T14:00:53.189Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-31T14:00:53.189Z"
             },
             {
               "$type": "Document",
@@ -76,8 +75,7 @@
               "RelativeToolTip": "TwitchChatBot\\TwitchEventSubContainer.cs",
               "ViewState": "AgIAAIkAAAAAAAAAAAAIwBQAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T10:57:59.728Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-31T10:57:59.728Z"
             },
             {
               "$type": "Document",
@@ -101,8 +99,7 @@
               "RelativeToolTip": "TwitchChatBot\\SoundPlayer.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAQwBsAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T10:20:34.479Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-30T10:20:34.479Z"
             },
             {
               "$type": "Document",
@@ -114,8 +111,7 @@
               "RelativeToolTip": "TwitchChatBot\\secret.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-09-27T12:07:59.512Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-27T12:07:59.512Z"
             },
             {
               "$type": "Document",

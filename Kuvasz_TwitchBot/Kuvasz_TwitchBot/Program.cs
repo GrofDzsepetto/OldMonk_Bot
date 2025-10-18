@@ -2,56 +2,50 @@
 using System.Net.Sockets;
 using System.Text;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using static Kuvasz_TwitchBot.TwitchFunctions;
-using static System.Formats.Asn1.AsnWriter;
-
 
 namespace Kuvasz_TwitchBot
 {
     internal class Program
     {
         public static string redirectUri = "http://localhost:3000/oldmonk/";
-
+        private static string accesToken = "";
         static async Task Main(string[] args)
         {
-            var cfg = LoadConfig();
+            bool useUi = args != null && args.Any(a => string.Equals(a, "--ui", StringComparison.OrdinalIgnoreCase));
 
-            string tokenFile = "tokens.json";
-            var tokens = LoadTokens(tokenFile);
-
-            if (tokens == null)
+            if (useUi)
             {
-                // AuthCode és AccessToken lekérése egyszer
-                var code = await TwitchFunctions.GetTwitchAuthCode(cfg.client_id, cfg.client_secret, cfg.scopes);
-                var accessToken = await TwitchFunctions.GetAccessToken(cfg.client_id, cfg.client_secret, code, out var refreshToken);
-
-                tokens = new TwitchTokens(accessToken, refreshToken, DateTime.UtcNow.AddHours(1));
-                SaveTokens(tokens, tokenFile);
+                var ui = new UIRender();
+                await ui.Start();
             }
-            else if (!IsTokenValid(tokens))
+            else
             {
-                tokens = await RefreshAccessToken(cfg.client_id, cfg.client_secret, tokens.RefreshToken);
-                SaveTokens(tokens, tokenFile);
+                await MainFunction();
+                Console.WriteLine("Kész. Nyomj Entert a kilépéshez.");
             }
 
-            Console.WriteLine("Token készen áll.");
-            // await TwitchFunctions.SendMessageToTwitch(tokens.AccessToken, "oldmonk_bot", "geppo2tv", "testmessage");
-
-
-
-        // ==================================== VOICE CAPTURE  ====================================
-        await RecordVoiceAndSendMessage(tokens.AccessToken);
             Console.ReadLine();
         }
 
-        private static async Task RecordVoiceAndSendMessage(string oauthToken)
+
+        private static async Task MainFunction()
+        {
+            Console.WriteLine("[Main] -- Start");
+            var settings = LoadJson<Settings>("settings.json");
+            await ManageLoginAndSync();
+            await RecordVoiceAndSendMessage(accesToken, settings.model, settings.boundKey);
+        }
+
+        private static async Task RecordVoiceAndSendMessage(string oauthToken, string modell, string boundKey)
         {
             var recorder = new AudioManager();
-            var vtt = new VoiceToText(@"models\ggml-medium.bin"); // init egyszer, ne minden körben
+            var vtt = new VoiceToText($"models\\ggml-{modell}.bin");
 
             while (true)
             {
-                Console.WriteLine("🎹 Nyomj bármilyen gombot a felvétel indításához/leállításához (ESC = kilép).");
+                Console.WriteLine($"Nyomj {boundKey} gombot a felvétel indításához/leállításához (ESC = kilép).");
 
                 bool recording = false;
                 while (true)
@@ -59,40 +53,121 @@ namespace Kuvasz_TwitchBot
                     var key = Console.ReadKey(true);
 
                     if (key.Key == ConsoleKey.Escape)
-                        return; // kilép az egész loopból
+                        return;
 
                     if (!recording)
                     {
                         recorder.StartRecord("mic.wav");
                         recording = true;
-                        Console.WriteLine("🎙️ Felvétel indult... (nyomj megint gombot a leállításhoz)");
+                        Console.WriteLine("Felvétel indult... (nyomj megint gombot a leállításhoz)");
                     }
                     else
                     {
                         recorder.StopRecord();
-                        Console.WriteLine("🛑 Felvétel leállítva, feldolgozás...");
+                        Console.WriteLine("Felvétel leállítva, feldolgozás...");
                         break;
                     }
                 }
+
                 var text = await vtt.TranscribeAsync(@"mic.wav");
                 Console.WriteLine("Felismert szöveg:");
                 Console.WriteLine(text);
 
-                var chatMessage = $"MrDestructoid : {text}";
-                await TwitchFunctions.SendMessageToTwitch(oauthToken, "oldmonk_bot", "geppo2tv", chatMessage);
+                string cleanMessage = MessageCleaner.turnToCommand(text);
+                Console.WriteLine("Clean Message: " + cleanMessage);
+                var chatMessage = $"MrDestructoid : {cleanMessage}";
+
+                await SafeSendMessage(chatMessage);
             }
         }
-        public static TwitchConfig LoadConfig(string path = "secret.json")
+        
+
+        public static async Task ManageLoginAndSync()
+        {
+            var cfg = LoadJson<TwitchConfig>("secret.json");
+            string tokenFile = "tokens.json";
+            var tokens = LoadTokens(tokenFile);
+
+            if (tokens == null)
+            {
+                var code = await TwitchFunctions.GetTwitchAuthCode(cfg.client_id, cfg.client_secret, cfg.scopes);
+                tokens = await TwitchFunctions.GetAccessToken(cfg.client_id, cfg.client_secret, code);
+                SaveTokens(tokens, tokenFile);
+            }
+            else if (!IsTokenValid(tokens) || string.IsNullOrWhiteSpace(tokens.RefreshToken))
+            {
+                try
+                {
+                    if (string.IsNullOrWhiteSpace(tokens.RefreshToken))
+                        throw new Exception("missing refresh");
+
+                    tokens = await RefreshAccessToken(cfg.client_id, cfg.client_secret, tokens.RefreshToken);
+                    SaveTokens(tokens, tokenFile);
+                }
+                catch
+                {
+                    var code = await TwitchFunctions.GetTwitchAuthCode(cfg.client_id, cfg.client_secret, cfg.scopes);
+                    tokens = await TwitchFunctions.GetAccessToken(cfg.client_id, cfg.client_secret, code);
+                    SaveTokens(tokens, tokenFile);
+                }
+            }
+
+            accesToken = tokens.AccessToken;
+            Console.WriteLine("Twitch connection made");
+            Console.WriteLine("You can progress to the STT");
+        }
+
+        private static async Task SafeSendMessage(string message)
+        {
+            var cfg = LoadJson<TwitchConfig>("secret.json");
+            var tokenFile = "tokens.json";
+
+            try
+            {
+                await TwitchFunctions.SendMessageToTwitch(accesToken, "oldmonk_bot", "geppo2tv", message);
+            }
+            catch (TwitchUnauthorizedException)
+            {
+                Console.WriteLine("Token lejárt/hibás – frissítek…");
+                var tokens = LoadTokens(tokenFile);
+
+                if (tokens == null || string.IsNullOrWhiteSpace(tokens.RefreshToken))
+                {
+                    var code = await TwitchFunctions.GetTwitchAuthCode(cfg.client_id, cfg.client_secret, cfg.scopes);
+                    tokens = await TwitchFunctions.GetAccessToken(cfg.client_id, cfg.client_secret, code);
+                }
+                else
+                {
+                    tokens = await RefreshAccessToken(cfg.client_id, cfg.client_secret, tokens.RefreshToken);
+                }
+
+                SaveTokens(tokens, tokenFile);
+                accesToken = tokens.AccessToken;
+
+                await TwitchFunctions.SendMessageToTwitch(accesToken, "oldmonk_bot", "geppo2tv", message);
+                Console.WriteLine("Új tokennel elküldve.");
+            }
+        }
+
+        public static T LoadJson<T>(string path)
         {
             if (!File.Exists(path))
-                throw new FileNotFoundException($"A konfigurációs fájl nem található: {path}");
+                throw new FileNotFoundException($"A fájl nem található: {path}");
 
             string json = File.ReadAllText(path);
-            var config = JsonSerializer.Deserialize<TwitchConfig>(json)
-                         ?? throw new Exception("Nem sikerült beolvasni a konfigurációt.");
+            var result = JsonSerializer.Deserialize<T>(json, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true,
+                WriteIndented = true
+            });
 
-            return config;
+            if (result == null)
+                throw new Exception($"Nem sikerült beolvasni a JSON-t: {path}");
+
+            return result;
         }
+
+
         public sealed class TwitchConfig
         {
             public string client_id { get; set; } = "";
@@ -100,5 +175,6 @@ namespace Kuvasz_TwitchBot
             public string scopes { get; set; } = "";
         }
 
+        private record Settings(string channelName, string model, string captureMode, string boundKey);
     }
 }

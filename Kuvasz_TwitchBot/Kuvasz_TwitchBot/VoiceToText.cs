@@ -24,7 +24,7 @@ namespace Kuvasz_TwitchBot
 
             using var factory = WhisperFactory.FromPath(_modelPath);
             using var processor = factory.CreateBuilder()
-                                         .WithLanguage("hu")     // magyar
+                                         .WithLanguage("hu")
                                          .Build();
 
             using var audioStream = File.OpenRead(audioFilePath);

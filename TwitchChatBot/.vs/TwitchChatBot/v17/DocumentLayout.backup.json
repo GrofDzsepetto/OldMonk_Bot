@@ -11,6 +11,10 @@
       "RelativeMoniker": "D:0:0:{7D162EBC-0EFC-4FB0-9C23-1DE1115F0F1B}|TwitchChatBot\\TwitchChatBot.csproj|solutionrelative:twitchchatbot\\secret.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{7D162EBC-0EFC-4FB0-9C23-1DE1115F0F1B}|TwitchChatBot\\TwitchChatBot.csproj|a:\\github\\oldmonk_bot\\twitchchatbot\\twitchchatbot\\soundplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D162EBC-0EFC-4FB0-9C23-1DE1115F0F1B}|TwitchChatBot\\TwitchChatBot.csproj|solutionrelative:twitchchatbot\\soundplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7D162EBC-0EFC-4FB0-9C23-1DE1115F0F1B}|TwitchChatBot\\TwitchChatBot.csproj|a:\\github\\oldmonk_bot\\twitchchatbot\\twitchchatbot\\ttscontainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7D162EBC-0EFC-4FB0-9C23-1DE1115F0F1B}|TwitchChatBot\\TwitchChatBot.csproj|solutionrelative:twitchchatbot\\ttscontainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -25,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7D162EBC-0EFC-4FB0-9C23-1DE1115F0F1B}|TwitchChatBot\\TwitchChatBot.csproj|a:\\github\\oldmonk_bot\\twitchchatbot\\twitchchatbot\\sounds.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{7D162EBC-0EFC-4FB0-9C23-1DE1115F0F1B}|TwitchChatBot\\TwitchChatBot.csproj|solutionrelative:twitchchatbot\\sounds.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D162EBC-0EFC-4FB0-9C23-1DE1115F0F1B}|TwitchChatBot\\TwitchChatBot.csproj|a:\\github\\oldmonk_bot\\twitchchatbot\\twitchchatbot\\soundplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D162EBC-0EFC-4FB0-9C23-1DE1115F0F1B}|TwitchChatBot\\TwitchChatBot.csproj|solutionrelative:twitchchatbot\\soundplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,21 +38,8 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "secret.json",
-              "DocumentMoniker": "A:\\GitHub\\OldMonk_Bot\\TwitchChatBot\\TwitchChatBot\\secret.json",
-              "RelativeDocumentMoniker": "TwitchChatBot\\secret.json",
-              "ToolTip": "A:\\GitHub\\OldMonk_Bot\\TwitchChatBot\\TwitchChatBot\\secret.json",
-              "RelativeToolTip": "TwitchChatBot\\secret.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-09-27T12:07:59.512Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -61,14 +48,14 @@
               "RelativeDocumentMoniker": "TwitchChatBot\\ConnectionDatas.cs",
               "ToolTip": "A:\\GitHub\\OldMonk_Bot\\TwitchChatBot\\TwitchChatBot\\ConnectionDatas.cs",
               "RelativeToolTip": "TwitchChatBot\\ConnectionDatas.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAmwCsAAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAADEAAAAAAAAAAAAYwDwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-27T12:07:06.816Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "TTSContainer.cs",
               "DocumentMoniker": "A:\\GitHub\\OldMonk_Bot\\TwitchChatBot\\TwitchChatBot\\TTSContainer.cs",
               "RelativeDocumentMoniker": "TwitchChatBot\\TTSContainer.cs",
@@ -76,37 +63,23 @@
               "RelativeToolTip": "TwitchChatBot\\TTSContainer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T14:00:53.189Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-31T14:00:53.189Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "TwitchEventSubContainer.cs",
               "DocumentMoniker": "A:\\GitHub\\OldMonk_Bot\\TwitchChatBot\\TwitchChatBot\\TwitchEventSubContainer.cs",
               "RelativeDocumentMoniker": "TwitchChatBot\\TwitchEventSubContainer.cs",
               "ToolTip": "A:\\GitHub\\OldMonk_Bot\\TwitchChatBot\\TwitchChatBot\\TwitchEventSubContainer.cs",
               "RelativeToolTip": "TwitchChatBot\\TwitchEventSubContainer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAIkAAAAAAAAAAAAIwBQAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T10:57:59.728Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-31T10:57:59.728Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Sounds.json",
-              "DocumentMoniker": "A:\\GitHub\\OldMonk_Bot\\TwitchChatBot\\TwitchChatBot\\Sounds.json",
-              "RelativeDocumentMoniker": "TwitchChatBot\\Sounds.json",
-              "ToolTip": "A:\\GitHub\\OldMonk_Bot\\TwitchChatBot\\TwitchChatBot\\Sounds.json",
-              "RelativeToolTip": "TwitchChatBot\\Sounds.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-12-31T09:09:54.143Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "A:\\GitHub\\OldMonk_Bot\\TwitchChatBot\\TwitchChatBot\\Program.cs",
               "RelativeDocumentMoniker": "TwitchChatBot\\Program.cs",
@@ -118,7 +91,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "SoundPlayer.cs",
               "DocumentMoniker": "A:\\GitHub\\OldMonk_Bot\\TwitchChatBot\\TwitchChatBot\\SoundPlayer.cs",
               "RelativeDocumentMoniker": "TwitchChatBot\\SoundPlayer.cs",
@@ -127,6 +100,30 @@
               "ViewState": "AgIAAAUAAAAAAAAAAAAQwBsAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-30T10:20:34.479Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "secret.json",
+              "DocumentMoniker": "A:\\GitHub\\OldMonk_Bot\\TwitchChatBot\\TwitchChatBot\\secret.json",
+              "RelativeDocumentMoniker": "TwitchChatBot\\secret.json",
+              "ToolTip": "A:\\GitHub\\OldMonk_Bot\\TwitchChatBot\\TwitchChatBot\\secret.json",
+              "RelativeToolTip": "TwitchChatBot\\secret.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-27T12:07:59.512Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Sounds.json",
+              "DocumentMoniker": "A:\\GitHub\\OldMonk_Bot\\TwitchChatBot\\TwitchChatBot\\Sounds.json",
+              "RelativeDocumentMoniker": "TwitchChatBot\\Sounds.json",
+              "ToolTip": "A:\\GitHub\\OldMonk_Bot\\TwitchChatBot\\TwitchChatBot\\Sounds.json",
+              "RelativeToolTip": "TwitchChatBot\\Sounds.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-31T09:09:54.143Z"
             }
           ]
         }
