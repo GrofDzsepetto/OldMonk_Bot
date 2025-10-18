@@ -74,8 +74,17 @@ namespace Kuvasz_TwitchBot
                 Console.WriteLine(text);
 
                 string cleanMessage = MessageCleaner.turnToCommand(text);
+
+                var chatMessage = $"";
+                if (cleanMessage != text)
+                {
+                    chatMessage = cleanMessage;
+                }
+                else 
+                {
+                    chatMessage = $"MrDestructoid : {cleanMessage}";
+                }
                 Console.WriteLine("Clean Message: " + cleanMessage);
-                var chatMessage = $"MrDestructoid : {cleanMessage}";
 
                 await SafeSendMessage(chatMessage);
             }
