@@ -27,3 +27,13 @@ release/
 *.tmp
 *.bak
 *.dbmdl
+
+_pycache__/
+*.py[cod]
+*$py.class
+
+# Virtuális környezetek
+.venv/
+venv/
+env/
+ENV/

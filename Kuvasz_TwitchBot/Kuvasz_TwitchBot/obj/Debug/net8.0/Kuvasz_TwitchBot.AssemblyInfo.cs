@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Kuvasz_TwitchBot")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+946d00b890c3bc32a6002bfe255abb7d60370534")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2683c2c2ddc51587f4982ae8868fcbd68dba209b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Kuvasz_TwitchBot")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Kuvasz_TwitchBot")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

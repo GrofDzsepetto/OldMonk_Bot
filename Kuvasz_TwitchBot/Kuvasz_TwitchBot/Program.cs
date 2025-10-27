@@ -33,9 +33,15 @@ namespace Kuvasz_TwitchBot
         private static async Task MainFunction()
         {
             Console.WriteLine("[Main] -- Start");
-            var settings = LoadJson<Settings>("settings.json");
-            await ManageLoginAndSync();
-            await RecordVoiceAndSendMessage(accesToken, settings.model, settings.boundKey);
+            try {
+                var exeDir = AppContext.BaseDirectory;
+                var settingsPath = Path.Combine(exeDir, "settings.json");
+                var settings = LoadJson<Settings>("settings.json");
+                await ManageLoginAndSync();
+                await RecordVoiceAndSendMessage(accesToken, settings.model, settings.boundKey);
+            } catch(Exception ex) {
+                Console.WriteLine($"[Error] -- {ex.Message}");
+            }
         }
 
         private static async Task RecordVoiceAndSendMessage(string oauthToken, string modell, string boundKey)
@@ -86,11 +92,10 @@ namespace Kuvasz_TwitchBot
                 }
                 Console.WriteLine("Clean Message: " + cleanMessage);
 
+
                 await SafeSendMessage(chatMessage);
             }
         }
-        
-
         public static async Task ManageLoginAndSync()
         {
             var cfg = LoadJson<TwitchConfig>("secret.json");
@@ -161,7 +166,9 @@ namespace Kuvasz_TwitchBot
         public static T LoadJson<T>(string path)
         {
             if (!File.Exists(path))
-                throw new FileNotFoundException($"A fájl nem található: {path}");
+            {
+                throw new FileNotFoundException($"Nem található a fájl: {path}");
+            }
 
             string json = File.ReadAllText(path);
             var result = JsonSerializer.Deserialize<T>(json, new JsonSerializerOptions
